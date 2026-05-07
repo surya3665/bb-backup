@@ -9,6 +9,10 @@ import { validateBankAccountForm } from "@/lib/schemas/bank-account.schema";
 
 import { ShopSetupLayout } from "./ShopSetupLayout";
 
+function digitsOnly(value: string) {
+  return value.replace(/\D/g, "");
+}
+
 export function AddBankAccountStep() {
   const router = useRouter();
   const [accountNumber, setAccountNumber] = useState("");
@@ -36,17 +40,23 @@ export function AddBankAccountStep() {
         <div className="w-full max-w-[600px] space-y-5">
           <Input
             value={accountNumber}
-            onChange={(event) => setAccountNumber(event.target.value)}
+            onChange={(event) => setAccountNumber(digitsOnly(event.target.value))}
             placeholder="Account Number"
             className="h-[52px] text-lg"
+            type="text"
             inputMode="numeric"
+            pattern="[0-9]*"
           />
           <Input
             value={confirmAccountNumber}
-            onChange={(event) => setConfirmAccountNumber(event.target.value)}
+            onChange={(event) =>
+              setConfirmAccountNumber(digitsOnly(event.target.value))
+            }
             placeholder="Confirm Account Number"
             className="h-[52px] text-lg"
+            type="text"
             inputMode="numeric"
+            pattern="[0-9]*"
           />
           <Input
             value={routingCode}
