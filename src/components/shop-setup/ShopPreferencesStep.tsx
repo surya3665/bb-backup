@@ -18,7 +18,9 @@ const currencyLabels: Record<(typeof CURRENCIES)[number], string> = {
 export function ShopPreferencesStep() {
   const router = useRouter();
   const [country, setCountry] = useState<(typeof COUNTRIES)[number] | "">("");
-  const [currency, setCurrency] = useState<(typeof CURRENCIES)[number] | "">("");
+  const [currency, setCurrency] = useState<(typeof CURRENCIES)[number] | "">(
+    "",
+  );
 
   return (
     <ShopSetupLayout activeStep="preferences" stepCaption="Shop Setup">
@@ -46,7 +48,9 @@ export function ShopPreferencesStep() {
                   id="shop-country"
                   value={country}
                   onChange={(event) =>
-                    setCountry(event.target.value as (typeof COUNTRIES)[number] | "")
+                    setCountry(
+                      event.target.value as (typeof COUNTRIES)[number] | "",
+                    )
                   }
                   className={country ? "" : "text-[#928a83]"}
                 >
@@ -72,7 +76,9 @@ export function ShopPreferencesStep() {
                   id="shop-currency"
                   value={currency}
                   onChange={(event) =>
-                    setCurrency(event.target.value as (typeof CURRENCIES)[number] | "")
+                    setCurrency(
+                      event.target.value as (typeof CURRENCIES)[number] | "",
+                    )
                   }
                   className={currency ? "" : "text-[#928a83]"}
                 >
@@ -98,9 +104,8 @@ export function ShopPreferencesStep() {
                 right experience for your region.
               </p>
               <p>
-                Your store currency is used for pricing your products.
-                Customers will see prices in their local currency where
-                applicable.
+                Your store currency is used for pricing your products. Customers
+                will see prices in their local currency where applicable.
               </p>
             </div>
           </div>
@@ -123,3 +128,4 @@ export function ShopPreferencesStep() {
     </ShopSetupLayout>
   );
 }
+//new
