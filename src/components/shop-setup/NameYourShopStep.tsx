@@ -17,8 +17,8 @@ export function NameYourShopStep() {
 
   return (
     <ShopSetupLayout activeStep="name" stepCaption="Shop Setup">
-      <div className="mx-auto flex max-w-[880px] flex-col items-center space-y-10 text-center">
-        <div className="space-y-3">
+      <div className="mx-auto flex max-w-[880px] flex-col items-center space-y-8 text-center">
+        <div className="space-y-2">
           <h1 className="text-[25px] font-semibold tracking-[-0.03em] text-[#17110f]">
             Name your Shop
           </h1>
@@ -28,7 +28,7 @@ export function NameYourShopStep() {
           </p>
         </div>
 
-        <div className="w-full max-w-[560px] space-y-4">
+        <div className="w-full max-w-[560px] space-y-3">
           <Input
             value={shopName}
             onChange={(event) => setShopName(event.target.value)}
@@ -36,7 +36,7 @@ export function NameYourShopStep() {
             className="h-[52px] text-lg"
           />
 
-          <div className="space-y-2 text-left text-[0.95rem] text-[#928a83]">
+          <div className="space-y-1.5 text-left text-[0.9rem] text-[#928a83]">
             <p className="flex items-center gap-2">
               <CheckMark />
               <span

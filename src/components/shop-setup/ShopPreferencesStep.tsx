@@ -22,8 +22,8 @@ export function ShopPreferencesStep() {
 
   return (
     <ShopSetupLayout activeStep="preferences" stepCaption="Shop Setup">
-      <div className="mx-auto max-w-[1060px] space-y-10">
-        <div className="space-y-3 text-center">
+      <div className="mx-auto max-w-[1060px] space-y-8">
+        <div className="space-y-2 text-center">
           <h1 className="text-[25px] font-semibold tracking-[-0.03em] text-[#17110f]">
             Shop preferences
           </h1>
@@ -32,9 +32,9 @@ export function ShopPreferencesStep() {
           </p>
         </div>
 
-        <div className="rounded-[18px] border border-[#d8d1cc] px-8 py-10 sm:px-12">
-          <div className="grid gap-10 lg:grid-cols-[1.2fr_0.95fr]">
-            <div className="space-y-12">
+        <div className="rounded-[18px] border border-[#d8d1cc] px-6 py-7 sm:px-10 sm:py-8">
+          <div className="grid gap-8 lg:grid-cols-[1.2fr_0.95fr]">
+            <div className="space-y-8">
               <div className="grid gap-4 sm:grid-cols-[160px_1fr] sm:items-center">
                 <label
                   htmlFor="shop-country"
@@ -80,7 +80,7 @@ export function ShopPreferencesStep() {
               </div>
             </div>
 
-            <div className="space-y-6 text-[1rem] leading-8 text-[#7d746d]">
+            <div className="space-y-4 text-[0.95rem] leading-7 text-[#7d746d]">
               <p>
                 This is the default language you&apos;ll use to describe your
                 products. Choose carefully - you can update it later if needed.

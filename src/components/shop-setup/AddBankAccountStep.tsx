@@ -22,8 +22,8 @@ export function AddBankAccountStep() {
 
   return (
     <ShopSetupLayout activeStep="bank" stepCaption="Add Bank Account">
-      <div className="mx-auto flex max-w-[880px] flex-col items-center space-y-10 text-center">
-        <div className="space-y-3">
+      <div className="mx-auto flex max-w-[880px] flex-col items-center space-y-8 text-center">
+        <div className="space-y-2">
           <h1 className="text-[25px] font-semibold tracking-[-0.03em] text-[#17110f]">
             Add bank Account
           </h1>
@@ -33,7 +33,7 @@ export function AddBankAccountStep() {
           </p>
         </div>
 
-        <div className="w-full max-w-[600px] space-y-7">
+        <div className="w-full max-w-[600px] space-y-5">
           <Input
             value={accountNumber}
             onChange={(event) => setAccountNumber(event.target.value)}
