@@ -12,10 +12,10 @@ type ShopSetupLayoutProps = {
 function BrandMark() {
   return (
     <div className="leading-none text-[#a33441]">
-      <div className="font-serif text-[2.35rem] tracking-[-0.08em] sm:text-[2.7rem]">
+      <div className="font-serif text-[1.4rem] tracking-[-0.08em] sm:text-[1.55rem]">
         Beauty
       </div>
-      <div className="-mt-2 font-serif text-[2.35rem] tracking-[-0.08em] sm:text-[2.7rem]">
+      <div className="-mt-1.5 font-serif text-[1.4rem] tracking-[-0.08em] sm:text-[1.55rem]">
         Barn
       </div>
     </div>
@@ -28,17 +28,19 @@ export function ShopSetupLayout({
   stepCaption,
 }: ShopSetupLayoutProps) {
   return (
-    <main className="flex h-dvh flex-col overflow-hidden bg-white">
-      <header className="shrink-0 border-b border-[#ded8d3] px-6 py-4 sm:px-10 sm:py-5 lg:px-14 lg:py-4">
+    <main className="flex min-h-dvh flex-col overflow-y-auto bg-white lg:h-dvh lg:overflow-hidden">
+      <header className="shrink-0 border-b border-[#ded8d3] px-6 py-2 sm:px-10 lg:px-14">
         <BrandMark />
       </header>
 
-      <div className="flex min-h-0 flex-1 flex-col px-5 py-4 sm:px-8 sm:py-5 lg:px-14 lg:py-4">
-        <p className="mb-3 shrink-0 text-sm text-[#6e645c]">{stepCaption}</p>
-        <div className="mx-auto max-w-[1380px]">
+      <div className="flex min-h-0 flex-1 flex-col px-5 py-5 sm:px-8 sm:py-6 lg:px-14">
+        <p className="sr-only">{stepCaption}</p>
+        <div className="w-full shrink-0">
           <ShopSetupStepper activeStep={activeStep} />
         </div>
-        <div className="min-h-0 flex-1 pt-5 sm:pt-6 lg:pt-6">{children}</div>
+        <div className="min-h-0 flex-1 pt-8 pb-8 sm:pt-9 sm:pb-10 lg:pt-10 lg:pb-0">
+          {children}
+        </div>
       </div>
     </main>
   );

@@ -17,28 +17,28 @@ const currencyLabels: Record<(typeof CURRENCIES)[number], string> = {
 
 export function ShopPreferencesStep() {
   const router = useRouter();
-  const [country, setCountry] = useState<(typeof COUNTRIES)[number]>("India");
-  const [currency, setCurrency] = useState<(typeof CURRENCIES)[number]>("INR");
+  const [country, setCountry] = useState<(typeof COUNTRIES)[number] | "">("");
+  const [currency, setCurrency] = useState<(typeof CURRENCIES)[number] | "">("");
 
   return (
     <ShopSetupLayout activeStep="preferences" stepCaption="Shop Setup">
-      <div className="mx-auto flex h-full max-w-[1060px] flex-col justify-center gap-5">
+      <div className="mx-auto flex w-full max-w-[1060px] flex-col gap-5 lg:h-full lg:justify-center">
         <div className="space-y-1.5 text-center">
-          <h1 className="text-[25px] font-semibold tracking-[-0.03em] text-[#17110f]">
+          <h1 className="text-[23px] font-semibold tracking-[-0.03em] text-[#17110f] sm:text-[25px]">
             Shop preferences
           </h1>
-          <p className="text-[1.05rem] text-[#352f2b]">
+          <p className="mx-auto max-w-[520px] text-[0.98rem] leading-6 text-[#352f2b] sm:text-[1.05rem]">
             Let&apos;s get started! Tell us about you and your beauty store.
           </p>
         </div>
 
-        <div className="rounded-[18px] border border-[#d8d1cc] px-6 py-6 sm:px-10 sm:py-7 lg:py-6">
-          <div className="grid gap-7 lg:grid-cols-[1.2fr_0.95fr]">
-            <div className="space-y-6">
-              <div className="grid gap-4 sm:grid-cols-[160px_1fr] sm:items-center">
+        <div className="rounded-[18px] border border-[#d8d1cc] px-4 py-5 sm:px-8 sm:py-7 lg:px-10 lg:py-6">
+          <div className="grid gap-6 lg:grid-cols-[1.2fr_0.95fr] lg:gap-7">
+            <div className="space-y-5 sm:space-y-6">
+              <div className="grid gap-2 sm:grid-cols-[160px_1fr] sm:items-center sm:gap-4">
                 <label
                   htmlFor="shop-country"
-                  className="text-lg font-medium text-[#17110f]"
+                  className="text-base font-medium text-[#17110f] sm:text-lg"
                 >
                   Shop country*
                 </label>
@@ -46,9 +46,13 @@ export function ShopPreferencesStep() {
                   id="shop-country"
                   value={country}
                   onChange={(event) =>
-                    setCountry(event.target.value as (typeof COUNTRIES)[number])
+                    setCountry(event.target.value as (typeof COUNTRIES)[number] | "")
                   }
+                  className={country ? "" : "text-[#928a83]"}
                 >
+                  <option value="" disabled>
+                    Select country
+                  </option>
                   {COUNTRIES.map((option) => (
                     <option key={option} value={option}>
                       {option}
@@ -57,10 +61,10 @@ export function ShopPreferencesStep() {
                 </Select>
               </div>
 
-              <div className="grid gap-4 sm:grid-cols-[160px_1fr] sm:items-center">
+              <div className="grid gap-2 sm:grid-cols-[160px_1fr] sm:items-center sm:gap-4">
                 <label
                   htmlFor="shop-currency"
-                  className="text-lg font-medium text-[#17110f]"
+                  className="text-base font-medium text-[#17110f] sm:text-lg"
                 >
                   Shop currency*
                 </label>
@@ -68,9 +72,13 @@ export function ShopPreferencesStep() {
                   id="shop-currency"
                   value={currency}
                   onChange={(event) =>
-                    setCurrency(event.target.value as (typeof CURRENCIES)[number])
+                    setCurrency(event.target.value as (typeof CURRENCIES)[number] | "")
                   }
+                  className={currency ? "" : "text-[#928a83]"}
                 >
+                  <option value="" disabled>
+                    Select currency
+                  </option>
                   {CURRENCIES.map((option) => (
                     <option key={option} value={option}>
                       {currencyLabels[option]}
@@ -80,7 +88,7 @@ export function ShopPreferencesStep() {
               </div>
             </div>
 
-            <div className="space-y-3 text-[0.95rem] leading-6 text-[#7d746d]">
+            <div className="space-y-3 text-[0.9rem] leading-6 text-[#7d746d] sm:text-[0.95rem]">
               <p>
                 This is the default language you&apos;ll use to describe your
                 products. Choose carefully - you can update it later if needed.
@@ -101,6 +109,7 @@ export function ShopPreferencesStep() {
         <div className="flex shrink-0 justify-center">
           <Button
             className="h-[46px] w-full px-0 py-0 text-[15px] leading-[18px] sm:w-[338px]"
+            disabled={!country || !currency}
             onClick={() => {
               if (country && currency) {
                 router.push("/shop-setup/name-your-shop");

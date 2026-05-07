@@ -9,19 +9,23 @@ export function Checkbox({ id, label, checked, onChange }: CheckboxProps) {
   return (
     <label
       htmlFor={id}
-      className="flex cursor-pointer items-center gap-4 rounded-[18px] border border-transparent px-4 py-4 transition hover:border-[#ead9da] hover:bg-[#fdfafa]"
+      className={`flex cursor-pointer items-start gap-4 rounded-[18px] border px-4 py-3 transition ${
+        checked
+          ? "border-[#a33441] bg-[#fcf4f5] shadow-[0_14px_30px_rgba(163,52,65,0.08)]"
+          : "border-transparent hover:border-[#ead9da] hover:bg-[#fdfafa]"
+      }`}
     >
-      <span className="relative flex items-center justify-center">
+      <span className="relative mt-0.5 flex items-center justify-center">
         <input
           id={id}
           type="checkbox"
           checked={checked}
           onChange={onChange}
-          className="peer h-6 w-6 cursor-pointer appearance-none rounded-full border border-[#c7c3bf] bg-white transition checked:border-[#a33441] checked:bg-[#a33441] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#a33441]"
+          className="peer h-[25px] w-[25px] cursor-pointer appearance-none rounded-full border border-[#c7c3bf] bg-white transition checked:border-[#a33441] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#a33441]"
         />
-        <span className="pointer-events-none absolute h-2.5 w-2.5 rounded-full bg-white opacity-0 transition peer-checked:opacity-100" />
+        <span className="pointer-events-none absolute h-[11px] w-[11px] scale-0 rounded-full bg-[#a33441] opacity-0 transition peer-checked:scale-100 peer-checked:opacity-100" />
       </span>
-      <span className="text-[1.02rem] leading-7 text-[#221916]">{label}</span>
+      <span className="text-[14px] leading-6 text-[#221916]">{label}</span>
     </label>
   );
 }
