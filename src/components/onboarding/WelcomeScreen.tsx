@@ -59,7 +59,11 @@ export function WelcomeScreen() {
         </ol>
 
         <div className="space-y-4 pt-2">
-          <Button href="/what-brings-you" fullWidth>
+          <Button
+            href="/what-brings-you"
+            fullWidth
+            className="h-[46px] max-w-[392px] px-0 py-0 text-[15px] leading-[18px]"
+          >
             Let&apos;s do this!
           </Button>
           <p className="text-[14px] leading-6 text-[#4b3f38]">

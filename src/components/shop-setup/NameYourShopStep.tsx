@@ -19,7 +19,7 @@ export function NameYourShopStep() {
     <ShopSetupLayout activeStep="name" stepCaption="Shop Setup">
       <div className="mx-auto flex max-w-[880px] flex-col items-center space-y-10 text-center">
         <div className="space-y-3">
-          <h1 className="text-[clamp(2rem,4vw,3rem)] font-semibold tracking-[-0.03em] text-[#17110f]">
+          <h1 className="text-[25px] font-semibold tracking-[-0.03em] text-[#17110f]">
             Name your Shop
           </h1>
           <p className="max-w-[720px] text-[1.1rem] leading-8 text-[#352f2b]">
@@ -71,7 +71,7 @@ export function NameYourShopStep() {
 
         <div className="flex justify-center">
           <Button
-            className="w-full sm:w-[324px]"
+            className="h-[46px] w-full px-0 py-0 text-[15px] leading-[18px] sm:w-[338px]"
             disabled={!isValid}
             onClick={() => {
               if (isValid) {

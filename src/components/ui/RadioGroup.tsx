@@ -14,7 +14,7 @@ export function RadioGroup({
   onChange,
 }: RadioGroupProps) {
   return (
-    <fieldset className="space-y-4">
+    <fieldset className="space-y-3">
       <legend className="sr-only">{name}</legend>
 
       {options.map((option) => {
@@ -23,7 +23,7 @@ export function RadioGroup({
         return (
           <label
             key={option.id}
-            className={`flex cursor-pointer items-start gap-4 rounded-[18px] border px-4 py-4 transition ${
+            className={`flex cursor-pointer items-start gap-4 rounded-[18px] border px-4 py-3 transition ${
               isSelected
                 ? "border-[#a33441] bg-[#fcf4f5] shadow-[0_14px_30px_rgba(163,52,65,0.08)]"
                 : "border-transparent hover:border-[#ead9da] hover:bg-[#fdfafa]"
@@ -40,18 +40,18 @@ export function RadioGroup({
 
             <span
               aria-hidden="true"
-              className={`mt-1 flex h-6 w-6 shrink-0 items-center justify-center rounded-full border transition ${
+              className={`mt-0.5 flex h-[25px] w-[25px] shrink-0 items-center justify-center rounded-full border transition ${
                 isSelected ? "border-[#a33441]" : "border-[#c7c3bf]"
               }`}
             >
               <span
-                className={`h-3 w-3 rounded-full bg-[#a33441] transition ${
+                className={`h-[11px] w-[11px] rounded-full bg-[#a33441] transition ${
                   isSelected ? "scale-100 opacity-100" : "scale-0 opacity-0"
                 }`}
               />
             </span>
 
-            <span className="text-[1.02rem] leading-7 text-[#221916]">
+            <span className="text-[14px] leading-6 text-[#221916]">
               {option.label}
             </span>
           </label>

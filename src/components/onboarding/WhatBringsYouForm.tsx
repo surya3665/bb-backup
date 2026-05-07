@@ -19,12 +19,12 @@ export function WhatBringsYouForm() {
       imageAlt="A makeup brush creating a dramatic cloud of powder."
       imageClassName="object-[33%_center]"
     >
-      <div className="space-y-10">
+      <div className="space-y-8">
         <div className="space-y-4">
-          <h1 className="font-[family-name:var(--font-display)] text-[clamp(2.2rem,4vw,3.15rem)] font-semibold leading-tight tracking-[-0.03em] text-[#120c0a]">
+          <h1 className="font-[family-name:var(--font-display)] text-[25px] font-semibold leading-tight tracking-[-0.03em] text-[#120c0a]">
             What brings you to BeautyBarn?
           </h1>
-          <p className="max-w-[34rem] text-[1rem] leading-7 text-[#4b3f38]">
+          <p className="max-w-[34rem] text-[14px] leading-6 text-[#4b3f38]">
             We&apos;ll guide you every step of the way, whether you&apos;re just
             starting or already selling beauty products.
           </p>
@@ -37,8 +37,9 @@ export function WhatBringsYouForm() {
           onChange={setReason}
         />
 
-        <div className="flex justify-end">
+        <div className="flex justify-end pt-1">
           <Button
+            className="h-[36px] w-[72px] px-0 py-0 text-[15px] leading-[18px]"
             onClick={() => {
               if (reason) {
                 router.push("/categories");

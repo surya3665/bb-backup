@@ -14,7 +14,7 @@ export function SplitImagePanel({
   className,
 }: SplitImagePanelProps) {
   return (
-    <div className="relative min-h-[320px] sm:min-h-[420px] lg:min-h-full">
+    <div className="relative min-h-[280px] sm:min-h-[360px] lg:h-screen lg:min-h-full">
       <Image
         src={src}
         alt={alt}

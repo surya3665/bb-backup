@@ -20,12 +20,12 @@ export function CategoriesSelect() {
       imagePriority
       imageClassName="object-contain md:object-cover"
     >
-      <div className="space-y-10">
+      <div className="space-y-8">
         <div className="space-y-4">
-          <h1 className="font-[family-name:var(--font-display)] text-[clamp(2rem,4vw,2.8rem)] font-semibold leading-tight tracking-[-0.03em] text-[#120c0a]">
+          <h1 className="font-[family-name:var(--font-display)] text-[25px] font-semibold leading-tight tracking-[-0.03em] text-[#120c0a]">
             What categories are you interested in?
           </h1>
-          <p className="max-w-[34rem] text-[1rem] leading-7 text-[#4b3f38]">
+          <p className="max-w-[34rem] text-[14px] leading-6 text-[#4b3f38]">
             Choose the types of beauty products you want to sell. You can select
             more than one.
           </p>
@@ -44,10 +44,15 @@ export function CategoriesSelect() {
         </div>
 
         <div className="flex items-center justify-end gap-3">
-          <Button href="/what-brings-you" variant="secondary">
+          <Button
+            href="/what-brings-you"
+            variant="secondary"
+            className="h-[36px] min-w-[72px] px-4 py-0 text-[15px] leading-[18px]"
+          >
             Back
           </Button>
           <Button
+            className="h-[36px] w-[72px] px-0 py-0 text-[15px] leading-[18px]"
             onClick={() => {
               if (categories.length > 0) {
                 router.push("/start-your-shop");

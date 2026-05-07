@@ -24,7 +24,7 @@ export function ShopPreferencesStep() {
     <ShopSetupLayout activeStep="preferences" stepCaption="Shop Setup">
       <div className="mx-auto max-w-[1060px] space-y-10">
         <div className="space-y-3 text-center">
-          <h1 className="text-[clamp(2rem,4vw,3rem)] font-semibold tracking-[-0.03em] text-[#17110f]">
+          <h1 className="text-[25px] font-semibold tracking-[-0.03em] text-[#17110f]">
             Shop preferences
           </h1>
           <p className="text-[1.1rem] text-[#352f2b]">
@@ -100,7 +100,7 @@ export function ShopPreferencesStep() {
 
         <div className="flex justify-center">
           <Button
-            className="w-full sm:w-[324px]"
+            className="h-[46px] w-full px-0 py-0 text-[15px] leading-[18px] sm:w-[338px]"
             onClick={() => {
               if (country && currency) {
                 router.push("/shop-setup/name-your-shop");
