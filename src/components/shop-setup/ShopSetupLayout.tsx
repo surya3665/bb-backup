@@ -28,17 +28,17 @@ export function ShopSetupLayout({
   stepCaption,
 }: ShopSetupLayoutProps) {
   return (
-    <main className="min-h-screen bg-white lg:h-screen lg:overflow-hidden">
-      <header className="border-b border-[#ded8d3] px-6 py-5 sm:px-10 sm:py-6 lg:px-14 lg:py-5">
+    <main className="flex h-dvh flex-col overflow-hidden bg-white">
+      <header className="shrink-0 border-b border-[#ded8d3] px-6 py-4 sm:px-10 sm:py-5 lg:px-14 lg:py-4">
         <BrandMark />
       </header>
 
-      <div className="px-5 py-5 sm:px-8 sm:py-6 lg:px-14 lg:py-5">
-        <p className="mb-4 text-sm text-[#6e645c]">{stepCaption}</p>
+      <div className="flex min-h-0 flex-1 flex-col px-5 py-4 sm:px-8 sm:py-5 lg:px-14 lg:py-4">
+        <p className="mb-3 shrink-0 text-sm text-[#6e645c]">{stepCaption}</p>
         <div className="mx-auto max-w-[1380px]">
           <ShopSetupStepper activeStep={activeStep} />
         </div>
-        <div className="pt-8 sm:pt-10 lg:pt-9">{children}</div>
+        <div className="min-h-0 flex-1 pt-5 sm:pt-6 lg:pt-6">{children}</div>
       </div>
     </main>
   );
